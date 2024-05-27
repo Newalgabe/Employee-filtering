@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Фильтр по отделам</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Фильтр сотрудников</h1>
+  <form id="filterForm">
+    <label for="department">Выберите отдел:</label>
+    <select id="department">
+      <option value="">--Выберите отдел--</option>
+      <option value="Маркетинг">Маркетинг</option>
+      <option value="Финансы">Финансы</option>
+      <option value="ИТ">ИТ</option>
+      <option value="Человеческие ресурсы">Человеческие ресурсы</option>
+    </select>
+
+    <label for="searchName">Поиск по имени:</label>
+    <input type="text" id="searchName" placeholder="Введите имя">
+
+    <label for="position">Выберите должность:</label>
+    <input type="text" id="position" placeholder="Введите должность">
+
+    <label for="sortBy">Сортировать по:</label>
+    <select id="sortBy">
+      <option value="">--Выберите опцию--</option>
+      <option value="name-asc">Имя (по возрастанию)</option>
+      <option value="name-desc">Имя (по убыванию)</option>
+      <option value="position-asc">Должность (по возрастанию)</option>
+      <option value="position-desc">Должность (по убыванию)</option>
+    </select>
+
+    <div class="tooltip">
+      <label>
+        <input type="checkbox" id="confirmCheck"> Подтвердите фильтрацию
+      </label>
+      <span class="tooltiptext">Отметьте, чтобы подтвердить фильтрацию</span>
+    </div>
+    
+    <div class="button-group">
+      <button type="button" id="filterButton" disabled>Фильтровать</button>
+      <button type="button" id="clearButton">Очистить</button>
+      <button type="button" id="showAllButton">Показать всех</button>
+    </div>
+  </form>
+  
+  <div class="result" id="result">
+  </div>
+</div>
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modal-name"></h2>
+    <p><strong>Отдел:</strong> <span id="modal-department"></span></p>
+    <p><strong>Должность:</strong> <span id="modal-position"></span></p>
+    <img id="modal-avatar" src="" alt="Аватар сотрудника" class="modal-avatar">
+  </div>
+</div>
+
+<script src="HW.js"></script>
+</body>
+</html>
